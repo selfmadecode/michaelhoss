@@ -1,0 +1,669 @@
+@font-face {
+  font-family: 'OpenSansCondensed-Light';
+  font-style: normal;
+  font-weight: 200;
+  src: local('OpenSansCondensed-Light'), local('OpenSansCondensed-Light'), url(../font/OpenSansCondensed-Light.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../font/Lato-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(../font/Lato-Light.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.header
+{
+    height: 73px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #a2a0a0;
+}
+.logo img
+{
+    height: 47px;
+    width: 47px;
+    margin-left: 65px;
+    text-align: left;
+    background-image: url(../images/hpi-hp-logo-pr.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 13px;
+    
+}
+.navigation
+{
+    height: 50px;
+    width: 70%;
+    background-color: white;
+    margin-left: 15%;
+    margin-top: -62px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+}
+.navigation ul li
+{
+    
+    list-style: none;
+    display: inline-block;
+    margin-top: 6px;
+}
+.navigation ul li a
+{
+    text-decoration: none;
+    font-size: 16px;
+    color: #585757;
+    margin-right: 25px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    
+}
+.navigation ul li a:hover
+{
+    color: #6565f0;
+}
+.favicon
+{
+    height: 50px;
+    width: 11%;
+    background-color: white;
+    float: right;
+    margin-top: -50px;
+}
+.favicon i
+{
+    margin-top: 5px;
+}
+.favicon searchicon a i:hover
+{
+    color: #6565f0;
+}
+#submenulaptop
+{
+    width: 100%;
+    height: 120px;
+    background-color: red;
+    position: absolute;
+    display: none;
+}
+#submenulaptop::after
+{
+    content: '';
+    position: absolute;
+    margin-top: -112px;
+    left: 21%;
+    border-width: 10px;
+    border-left: 14px solid transparent;
+    border-top: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid red;
+    transition: 1s ease-out;
+    
+}
+#laptopsubmenu
+{
+    width: 100%;
+    height: 200px;
+    background-color: #2a2a2a;
+    
+}
+#laptopsection
+{
+    background-image: url(../images/laptopface.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 35%;
+    background-position:center;
+    background-color: rgba(42, 42, 42, 0.69);
+    background-blend-mode:overlay;
+    text-align: center;
+    float: left;
+}
+#laptopsection button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 75px;
+    margin-left: 10px;
+}
+#laptopsection button:hover
+{
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    transition: 0.2s ease-in;
+    /*    controls the transition*/
+}
+.discorverhp
+{
+    width: 35%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.discorverhp p{
+    font-family: 'Lato';
+    font-weight: 400; 
+}
+.discorverhp h2
+{
+    font-family: 'Lato';
+    font-weight: 400;    
+    letter-spacing: 1px;
+    word-spacing: 6px;
+    font-size: 25px;
+    margin-top: 65px;
+}
+.printersubmenu
+{
+    width: 30%;
+    height: 100%;
+    float: left;
+    background-image: url(../images/smallprinter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(42, 42, 42, 0.69);
+    background-blend-mode:overlay; 
+    text-align: center;
+}
+.printersubmenu button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 75px;
+    margin-left: 10px;
+}
+.printersubmenu button:hover
+{
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+.offset
+{
+    width: 100%;
+    height: 60px;
+    float: left;
+    position: fixed;
+    background-color: #2a2a2a;  
+    top: 0px;
+    display: none;
+}
+.offsetlaptop
+{
+    width: 25%;
+    height: 100%;
+    background-image: url(../images/laptopface.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 15%;
+    text-align: center;
+    background-color: rgba(42, 42, 42, 0.69);
+    background-blend-mode:overlay;
+    float: left;
+}
+.offsetlaptop button
+{
+    width: 100px;
+    height: 35px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 13px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 13px;
+}
+.offsetp
+{
+    width: 20%;
+    height: 100%;
+    background-image: url(../images/laptopface.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    background-color: rgba(42, 42, 42, 0.69);
+    float: left;
+    background-blend-mode:overlay;
+}
+.offsetp h2
+{
+    font-family: 'Lato';
+    font-weight: 400; 
+    color: dodgerblue;
+    font-size: 20px;
+}
+.offsetprinter
+{
+    width: 25%;
+    height: 100%;
+    background-image: url(../images/smallprinter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    text-align: center;
+    margin-right: 15%;
+    background-color: rgba(42, 42, 42, 0.69);
+    background-blend-mode:overlay;
+    float: left;
+}
+.offsetprinter button
+{
+    width: 100px;
+    height: 35px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 13px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 13px;
+}
+.offsetlaptop button:hover
+{
+    background-color: dodgerblue;
+    border-color: dodgerblue;  
+}
+.offsetprinter button:hover
+{
+    background-color: dodgerblue;
+    border-color: dodgerblue;  
+}
+.banerimg
+{
+    width: 100%;
+    height: 734px;
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+    text-align: center;
+    font-family: 'Lato';
+    font-weight: 300;
+    
+  
+}
+.banerimg img
+{
+    margin-top: 265px;
+}
+.banerimg p
+{
+    font-size: 20px;
+}
+.banerimg button
+{
+    margin-top: 15px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: dodgerblue;
+    font-size: 16px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+}
+.banerimg button:hover
+{
+    background-color: #6666f8;
+}
+.printertab
+{
+    width: 100%;
+    background-size: contain;
+}
+.printer
+{
+    width: 48%;
+    float: left;
+}
+.printer img
+{
+    margin-top: 40px;
+    margin-left: 35px;
+    
+}
+.printer_writeup
+{
+    width: 46%;
+    float: right;
+}
+.printer_writeup h1
+{
+    margin-top: 30%;
+    font-family: 'Lato';
+    font-weight: 400;    
+    letter-spacing: 1px;
+    word-spacing: 6px;
+}
+.printer_writeup p
+{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    
+}
+.printer_writeup button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid dodgerblue;
+    background-color: transparent;
+    font-size: 16px;
+    color: dodgerblue;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.printer_writeup button:hover
+{
+    background-color: #6565f0;
+    color: white;
+}
+.colorbackground
+{
+    float:left;
+    width: 100%;
+    background-image: url(../images/supplybanner.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+}
+.bestwork
+{
+    width: 100%;
+}
+.bestwork h1
+{
+    font-family: 'Lato';
+    font-weight: 400;    
+    letter-spacing: 1px;
+    word-spacing: 6px;    
+    margin-top: 5%;
+}
+.bestwork p
+{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.bestwork button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid dodgerblue;
+    background-color: transparent;
+    font-size: 16px;
+    color: dodgerblue;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 100px;
+}
+.bestwork button:hover
+{
+    background-color: #6565f0;
+    color: white;
+}
+.revolutionarytab
+{
+    width: 100%;
+    float: left;
+}
+.revimg
+{
+    width: 48%;
+    float: left;
+}
+.revimg img
+{
+    margin-top: 50px;
+    margin-left: 35px;
+}
+.rev_writeup
+{
+    width: 46%;
+    float: right;  
+}
+.rev_writeup h1
+{
+    margin-top: 30%;
+    font-family: 'Lato';
+    font-weight: 400;    
+    letter-spacing: 1px;
+    word-spacing: 6px;
+}
+.rev_writeup p
+{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    
+}
+.rev_writeup button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid dodgerblue;
+    background-color: transparent;
+    font-size: 16px;
+    color: dodgerblue;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.rev_writeup button:hover
+{
+    background-color: #6565f0;
+    color: white;
+}
+.printmoment
+{
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/printermoment.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    background-position: center;
+}
+.printmoment_writeup
+{
+    width: 45%;
+    margin-left: 6%;
+}
+.printmoment_writeup h1
+{
+    font-family: 'Lato';
+    font-weight: 300;
+    letter-spacing: 1px;
+    word-spacing: 6px;    
+    margin-top: 18%;
+    color: white;
+    line-height: 45px;
+}
+.printmoment_writeup p
+{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: white;    
+}
+.printmoment_writeup button
+{
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 400; 
+    border-radius: 3px;
+    margin-top: 20px;
+}
+.printmoment_writeup button:hover
+{
+    background-color: white;
+    color: black;
+}
+.whitespace
+{
+    width: 100%;
+    height: 70px;
+    float: left;
+}
+.whitespace p
+{
+   margin-top: 20px;
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: 300;
+}
+footer
+{
+    float: left;
+    width: 100%;
+    height: 450px;
+    background-color: #525252;
+    font-family: 'Lato';
+    font-weight: 400;
+}
+.country
+{
+    margin-left: 3%;
+    width: 94%;
+}
+.about
+{
+    margin-left: 3%;
+    width: 94%;
+    height: 280px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Lato';
+    font-weight: 400;
+    border-bottom: 1px solid white;
+}
+.aboutus
+{
+    width: 18%;
+    float: left;
+}
+.waystobuy
+{
+  width: 18%;
+    float: left;  
+}
+.support
+{
+  width: 18%;
+    float: left;  
+}
+.patners
+{
+  width: 18%;
+    float: left;  
+}
+.stayconnected
+{
+  width: 18%;
+    float: right;  
+}
+.submitbtn
+{
+    cursor: pointer;
+}
+.fab
+{
+    cursor: pointer;
+    width: 30px;
+    font-size: 20px;
+}
+.about ul li
+{
+   list-style: none;
+}
+.about ul li a
+{
+   text-decoration: none;
+    color: white;
+    
+}
+.about ul li:hover
+{
+    text-decoration: underline
+}
+.recalls
+{
+    margin-left: 3%;
+    width: 94%;
+}
+.recalls ul li
+{
+    display: inline-block;
+    margin-right: 6px;
+    border-right: 1px solid white;
+    
+}
+.recalls ul li a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-family: 'Lato';
+    font-weight: 400;
+    text-align: center; 
+    padding-right: 10px;
+}
+.recalls ul li:hover
+{
+    text-decoration: underline;
+}

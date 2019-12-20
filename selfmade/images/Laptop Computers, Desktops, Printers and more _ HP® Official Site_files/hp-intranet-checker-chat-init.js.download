@@ -1,0 +1,21 @@
+
+if(!window.console){console={log:function(){}}};function fireEvent(name,target){if(document.createEvent){var evt=document.createEvent('Event');evt.initEvent(name,true,true);document.dispatchEvent(evt);}else{document.documentElement[name]++;}}
+function getQueryParam(qs,name){qs=qs.split('+').join(' ');var params={},tokens,re=/[?&]?([^=]+)=([^&]*)/g;while(tokens=re.exec(qs)){params[decodeURIComponent(tokens[1])]=decodeURIComponent(tokens[2]);}
+if(!params[name])params[name]="";return params[name];}
+function getXHR(){if(window.XMLHttpRequest){return new XMLHttpRequest();}
+try{return new ActiveXObject('MSXML2.XMLHTTP.6.0');}catch(e){try{return new ActiveXObject('MSXML2.XMLHTTP.3.0');}catch(e){alert('This browser is not AJAX enabled.');return null;}}}
+function HPCheckIntranetAccess(forceDetection){if(typeof HPintranetAccess!=="undefined"&&!forceDetection){return};HPintranetAccess=-1;var url=getIntranetHandlerURL(),xhr=getXHR();if(typeof(xhr)==='undefined'){HPintranetAccess=0;return;}
+xhr.open('GET',url,true);xhr.timeout=getQueryParam(window.location.search,"itimeout")||1000;xhr.onreadystatechange=function(){if(typeof(xhr.status)==="unknown"||xhr.readyState!=4)return;if(xhr.status===200){HPintranetAccess=1;console.log("[INFO] You are inside HP intranet (checked in "+xhr.timeout+" msec).");}else{HPintranetAccess=0;console.log("[INFO] You are outside HP intranet.");}};xhr.setRequestHeader("Content-type","text/plain");xhr.ontimeout=function(){HPintranetAccess=0;xhr.abort();console.log("[INFO] We can't check HP intranet access ("+url+") in "+xhr.timeout+" msec");};xhr.send();function getIntranetHandlerURL(){var prefix='g4t0539a.houston.hp.com';if(window.location.host.indexOf('www8.hp.com')!==-1){prefix='stg.www8.hp.com';}
+else if(window.location.host.indexOf('d9t0164g.houston.hp.com')!==-1){prefix='d9t0164g.houston.hp.com:30002';}
+return('//'+prefix+'/ww/en/system/include/intranetCheck.jsp'+'?t='+Math.random());};};function HPLiveChatInit(){var successEvent="HP:chat:success",suppressedEvent="HP:chat:suppressed",index=0;var isIntranetChecked=function(){if(typeof HPintranetAccess!=="undefined"&&HPintranetAccess!=-1){initLiveChat();clearInterval(waitForIntranetAccessChecking);}
+if(index++==20){fireEvent(suppressedEvent,window);clearInterval(waitForIntranetAccessChecking);}};var waitForIntranetAccessChecking=setInterval(isIntranetChecked,500);function initLiveChat(){var CHAT=window.CHAT||{};if(!HPintranetAccess||/enablelivechat=(true|1)/.test(window.location.href)){if(appendScripts(CHAT.Links||[])){fireEvent(successEvent,window);}}else{console.log('[INFO] Live chat is suppressed for intranet users');fireEvent(suppressedEvent,window);}
+function appendScripts(links){var result=0;for(var i=0;i<links.length;i++){var a=links[i];if(!$('script[src="'+a+'"]').length){console.log('[INFO] Live chat is initialized');console.log(a);var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("src",a);document.getElementsByTagName("head").item(0).appendChild(b);result=1;}}
+return result;}}}
+function HPChatInit(){HPCheckIntranetAccess();HPLiveChatInit();}
+if(window.addEventListener){window.addEventListener('load',HPChatInit)}else{window.attachEvent('onload',HPChatInit)}
+
+/*
+Date: 7/14/2016 2:57:42 PM
+Non-published images:
+/webdav/12%20WW%20Website%20Master/Building%20Blocks/System/00%20Shared/Content/CSS/i/'+a+'
+*/

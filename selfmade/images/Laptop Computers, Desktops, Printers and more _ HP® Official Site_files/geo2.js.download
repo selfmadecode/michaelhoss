@@ -1,0 +1,16 @@
+(function(){
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(['activateGeoDelayedExperiments', {
+    'location':{
+      'city': "ADEGBOLA",
+      'continent': "AF",
+      'country': "NG",
+      'region': ""
+    },
+    'ip':"197.211.61.8"
+  }]);
+})
+//
+()
+
+;
